@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+// Stateless -> Widgets que não podem ser alterados (constantes)
+// Stateful -> Widgets que podem ser alterados (variáveis)
+
+void main(){
+  runApp (MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "Frases do dia",
+    // Container serve para colocar outros widgets nele
+    // Esqueleto: define uma estrutura para o App (Barra superiro, conteúdo e barra inferior)
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text("Instagram"),
+        backgroundColor: Colors.green,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Text("Conteúdo principal")
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.lightGreen,
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Row(
+            children: <Widget>[
+              Text("Texto 1"),
+              Text("Texto 2"),
+              Text("Texto 3"),
+            ],
+          ),
+        ),
+      ),
+    ),
+  ));
+}
+
+class extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return context();
+  }
+}
