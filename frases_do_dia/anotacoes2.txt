@@ -1,0 +1,15 @@
+ /*
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt varius bibendum.",
+            textAlign: TextAlign.justify,
+          )
+          */
+          Text("t1"),
+
+          // Margin não funcionaria
+          Padding(
+            padding: EdgeInsets.all(30),
+            child: Text("t2"),
+          ),
+
+          Text("t3")

@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    title: "Frases do dia",
+    // Container serve para colocar outros widgets nele
+    // home: Container(color: Colors.white),
+    /*
+    home: Container(
+      color: Colors.white,
+      // child é filho só pode definir um único item
+      // children pode ser vários items
+      child: Column(
+        children: <Widget>[
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            style: TextStyle(
+              fontSize: 35,
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.normal,
+              letterSpacing: 0,
+              wordSpacing: 0,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: Colors.black,
+              decorationStyle: TextDecorationStyle.dotted,
+              color: Colors.orange
+            ),
+          )
+        ]
+      ),
+    ),
+    */
+    home: Container(
+      color: Colors.white,
+      // child é filho só pode definir um único item
+      // children pode ser vários items
+      child: Column(
+        children: <Widget>[
+          FlatButton(
+            onPressed: (){
+              print("Botão pressionado!");
+            },
+            child: Text(
+              "COMEÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇOU",
+              style: TextStyle(
+                fontSize:20,
+                color: Colors.black,
+                decoration: TextDecoration.none
+              )
+            )
+          )
+        ]
+      ),
+    ),
+    /*
+    home: Column(children: <Widget>[
+      Text("texto 1"),
+      Text("texto 2"),
+      Text("texto 3")
+    ],
+    */
+    /*
+    home: Row(
+      children: <Widget>[
+        Text(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
+      ],
+    )
+    */
+  ));
+}
+
