@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'TelaCliente.dart';
+import 'TelaServico.dart';
+import 'TelaContato.dart';
+import 'TelaEmpresa.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -10,14 +14,38 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   void _abrirEmpresa(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaEmpresa())
+    );
+  }
 
+void _abrirCliente(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaCliente())
+    );
+  }
+
+  void _abrirContato(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaContato())
+    );
+  }
+
+  void _abrirServico(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TelaServico())
+    );
   }
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("ATM Consultoria"),
         backgroundColor: Colors.green,
@@ -39,7 +67,7 @@ class _HomeState extends State<Home> {
                     child: Image.asset("images/menu_empresa.png")
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirServico,
                     child: Image.asset("images/menu_servico.png")
                   )
                 ],
@@ -51,16 +79,16 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirCliente,
                     child: Image.asset("images/menu_cliente.png")
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirContato,
                     child: Image.asset("images/menu_contato.png")
                   )
                 ],
               )
-            )
+            ),
           ],
         )
       )
