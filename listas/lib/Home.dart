@@ -38,6 +38,53 @@ class _HomeState extends State<Home> {
             // print("a ${indice}");
             // Map<String, dynamic> item = _itens;
             return ListTile(
+              onTap: (){
+                // print("Clique com onTap");
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text( _itens[indice]["titulo"],
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.orange
+                        )
+                      ),
+                      titlePadding: EdgeInsets.all(20),
+                      /*
+                      titleTextStyle: TextStyle(
+                        fontSize: 20,
+                        color: Colors.orange
+                      ),
+                      */
+                      content: Text(_itens[indice]["descricao"]),
+                      actions: <Widget>[
+                        FlatButton(
+                          onPressed: (){
+                            print("Selecionado sim");
+                            Navigator.pop(context);
+                          },
+                          child: Text("Sim")
+                        ),
+                        FlatButton(
+                          onPressed: (){
+                            print("Selecionado não");
+                            Navigator.pop(context);
+                          },
+                          child: Text("Não")
+                        ),
+                      ],
+                      // backgroundColor: Colors.red,
+                      // contentPadding: EdgeInsets.all(20),
+                    );
+                  }
+                );
+              },
+              /*
+              onLongPress: (){
+                print("Clique com onLongPress");
+              },
+              */
               title: Text(_itens[indice]["titulo"]),
               subtitle: Text(_itens[indice]["descricao"]),
             );
