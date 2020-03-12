@@ -24,12 +24,15 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               child: Text("Ir para a segunda tela"),
               padding: EdgeInsets.all(15),
               onPressed: (){
+                /*
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => TelaSecundaria(valor: "Ronaldo")
                   )
                 );
+                */
+                Navigator.pushNamed(context, "/secundaria");
               },
             )
           ],

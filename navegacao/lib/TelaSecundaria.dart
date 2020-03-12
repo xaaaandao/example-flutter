@@ -22,7 +22,22 @@ class _TelaSecundariaState extends State<TelaSecundaria> {
         padding: EdgeInsets.all(32),
         child: Column(
           children: <Widget>[
-            Text("Segunda tela!!!!!!!!!!!!! valor passado: ${widget.valor}")
+            Text("Segunda tela!!!!!!!!!!!!! valor passado: ${widget.valor}"),
+            RaisedButton(
+              child: Text("Ir para a primeira tela"),
+              padding: EdgeInsets.all(15),
+              onPressed: (){
+                /*
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TelaSecundaria(valor: "Ronaldo")
+                  )
+                );
+                */
+                Navigator.pushNamed(context, "/");
+              },
+            )
           ],
         )
       )
