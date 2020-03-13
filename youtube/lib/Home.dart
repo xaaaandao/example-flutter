@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:youtube/telas/Inicio.dart';
-import 'package:youtube/telas/EmAlta.dart';
-import 'package:youtube/telas/Inscricao.dart';
 import 'package:youtube/telas/Biblioteca.dart';
+import 'package:youtube/telas/EmAlta.dart';
+import 'package:youtube/telas/Inicio.dart';
+import 'package:youtube/telas/Inscricao.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -15,15 +13,16 @@ class _HomeState extends State<Home> {
 
   int _indiceAtual = 0;
 
-  List<Widget> telas = [
-    Inicio(),
-    EmAlta(),
-    Inscricao(),
-    Biblioteca()
-  ];
-
   @override
   Widget build(BuildContext context) {
+
+    List<Widget> telas = [
+      Inicio(),
+      EmAlta(),
+      Inscricao(),
+      Biblioteca()
+    ];
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -31,65 +30,66 @@ class _HomeState extends State<Home> {
         ),
         backgroundColor: Colors.white,
         title: Image.asset(
-          "images/youtube.png",
+            "images/youtube.png",
           width: 98,
           height: 22,
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
-              Icons.videocam
-            ),
+            icon: Icon(Icons.videocam),
             onPressed: (){
-              print("ação: videocam");
+              print("acao: videocam");
             },
           ),
           IconButton(
-            icon: Icon(
-              Icons.search
-            ),
+            icon: Icon(Icons.search),
             onPressed: (){
-              print("ação: search");
+              print("acao: pesquisa");
             },
           ),
           IconButton(
-            icon: Icon(
-              Icons.account_circle
-            ),
+            icon: Icon(Icons.account_circle),
             onPressed: (){
-              print("ação: account_circle");
+              print("acao: conta");
             },
-          ),
+          )
         ],
       ),
-      body: telas[_indiceAtual],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: telas[_indiceAtual],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceAtual,
-        onTap: (indice) {
+        onTap: (indice){
           setState(() {
             _indiceAtual = indice;
           });
         },
-        fixedColor: Colors.red,
         type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            title: Text("Início"),
-            icon: Icon(Icons.home)
-          ),
-          BottomNavigationBarItem(
-            title: Text("Em alta"),
-            icon: Icon(Icons.whatshot)
-          ),
-          BottomNavigationBarItem(
-            title: Text("Inscrições"),
-            icon: Icon(Icons.subscriptions)
-          ),
-          BottomNavigationBarItem(
-            title: Text("Biblioteca"),
-            icon: Icon(Icons.folder)
-          ),
-        ]
+        fixedColor: Colors.red,
+          items: [
+            BottomNavigationBarItem(
+              //backgroundColor: Colors.orange,
+              title: Text("Início"),
+              icon: Icon(Icons.home)
+            ),
+            BottomNavigationBarItem(
+                //backgroundColor: Colors.red,
+                title: Text("Em alta"),
+                icon: Icon(Icons.whatshot)
+            ),
+            BottomNavigationBarItem(
+                //backgroundColor: Colors.blue,
+                title: Text("Inscrições"),
+                icon: Icon(Icons.subscriptions)
+            ),
+            BottomNavigationBarItem(
+                //backgroundColor: Colors.green,
+                title: Text("Biblioteca"),
+                icon: Icon(Icons.folder)
+            ),
+          ]
       ),
     );
   }
