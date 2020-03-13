@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -9,14 +10,26 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  String _textoSalvo = "Nada salvo!";
   TextEditingController _controllerCampo = TextEditingController();
 
-  _salvar(){
+  _salvar() async {
+    String valorDigitado = _controllerCampo.text;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString("nome", valorDigitado);
 
+    print("Operação (salvar): $valorDigitado ");
   }
 
-  _recuperar(){
+  _recuperar() async{
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _textoSalvo = prefs.getString("nome");
+    });
+  }
 
+  _remover() async{
+    
   }
 
   @override
@@ -30,7 +43,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             Text(
-              "Nada salvo!",
+              _textoSalvo,
               style: TextStyle(
                 fontSize: 20
               )
@@ -44,9 +57,6 @@ class _HomeState extends State<Home> {
             ),
             Row(
               children: <Widget>[
-                RaisedButton(
-
-                ),
                 RaisedButton(
                   color: Colors.blue,
                   textColor: Colors.white,
@@ -70,6 +80,18 @@ class _HomeState extends State<Home> {
                     )
                   ),
                   onPressed: _recuperar,
+                ),
+                RaisedButton(
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  padding: EdgeInsets.all(15),
+                  child: Text(
+                    "Remover",
+                    style: TextStyle(
+                      fontSize: 20
+                    )
+                  ),
+                  onPressed: _remover,
                 )
               ],
             )
