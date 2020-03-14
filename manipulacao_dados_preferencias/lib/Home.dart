@@ -24,12 +24,13 @@ class _HomeState extends State<Home> {
   _recuperar() async{
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _textoSalvo = prefs.getString("nome");
+      _textoSalvo = prefs.getString("nome") ?? "Sem valor";
     });
   }
 
   _remover() async{
-    
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove("nome");
   }
 
   @override
