@@ -57,7 +57,7 @@ ExpansionTile getItemTabelasBasicas(context, String menu){
       children: <Widget>[
         getMyPadding(context, "Classificação de Planta"),
         getMyPadding(context, "Cargo"),
-        getMyPadding(context, "Cidade"),
+        getPaddingCidade(context, "Cidade"),
         getMyPadding(context, "Ramo de Atividade"),
         getMyPadding(context, "Tipo de Documento"),
       ],
