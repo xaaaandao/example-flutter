@@ -20,6 +20,7 @@ Drawer getMyDrawer(context){
         getItemCadastros(context, "Cadastros"),
         getItemGerencial(context, "Gerencial"),
         getItemControleComercial(context, "Controle Comercial"),
+        getItemWithoutSubmenu(context, "Sair"),
       ],
     ),
   );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bate_ponto_frontend/view/Common.dart';
+import 'package:bate_ponto_frontend/view/Login/Login.dart';
 import 'package:bate_ponto_frontend/view/drawer/item/subitem/Subitem.dart';
 
 /* QUANDO É APENAS UM ITEM */
@@ -7,6 +8,8 @@ ListTile getItemWithoutSubmenu(context, String text){
   switch(text){
     case "Home":
       return getNavigateHome(context, "Home");
+    case "Sair":
+      return getNavigateSair(context, "Sair");
   }
 }
 
@@ -14,16 +17,31 @@ ListTile getNavigateHome(context, String text){
   return new ListTile(
     title: getMyText(text, 28),
     onTap: () {
-      /* Navigator.push(
+      /*
+      Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => AlterarSenha('date')
+          builder: (context) => Login()
         )
-      ); */
+      );
+      */
     },
   );
 }
 
+ListTile getNavigateSair(context, String text){
+  return new ListTile(
+    title: getMyText(text, 28),
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Login()
+        )
+      );
+    },
+  );
+}
 
 /* MINHA CONTA */
 
