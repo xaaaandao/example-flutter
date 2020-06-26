@@ -10,9 +10,10 @@ class Login extends StatefulWidget {
   _LoginState createState() => _LoginState();
 }
 
-AppBar getMyAppBar2(){
+AppBar getMyAppBar2(BuildContext context){
   return AppBar(
-    title: getMyText("Alterar a senha", 36),
+    centerTitle: true,
+    title: getMyText("Faça o Login", 36),
     backgroundColor: Colors.deepPurpleAccent,
     automaticallyImplyLeading: false,
   );
@@ -25,7 +26,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getMyAppBar2(),
+      appBar: getMyAppBar2(context),
       body: Column(
         children: [
           getTextFormField(Icon(Icons.account_circle), 'Usuário', true),

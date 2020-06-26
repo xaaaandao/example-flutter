@@ -11,7 +11,8 @@ class Cidade extends StatefulWidget {
 
 AppBar getMyAppBar2(){
   return AppBar(
-    title: getMyText("Alterar a senha", 36),
+    centerTitle: true,
+    title: getMyText("Cidade", 36),
     backgroundColor: Colors.deepPurpleAccent,
     actions: <Widget>[
     ],
@@ -24,6 +25,7 @@ class _CidadeState extends State<Cidade> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getMyAppBar2(),
+      floatingActionButton: getMyFloatingActionButton(context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Table(
@@ -58,18 +60,7 @@ class _CidadeState extends State<Cidade> {
                 ],
               );
   }
-/*
-  Icon(
-                        Icons.edit,
-                        color: Colors.green,
-                        size: 30.0,
-                      ),
-                      Icon(
-                        Icons.restore_from_trash,
-                        color: Colors.red,
-                        size: 30.0,
-                      ),
-*/
+  
   TableCell defineCelulaEditaRemover(){
     return new TableCell(
                 child: Row(
@@ -98,5 +89,13 @@ class _CidadeState extends State<Cidade> {
                 ),
                 verticalAlignment: TableCellVerticalAlignment.middle,
               );
+  }
+
+  FloatingActionButton getMyFloatingActionButton(context){
+    return new FloatingActionButton(
+      onPressed: () => {},
+      child: Icon(Icons.add),
+      backgroundColor: Colors.deepPurpleAccent,
+    );
   }
 }

@@ -12,6 +12,7 @@ class AlterarSenha extends StatefulWidget {
 
 AppBar getMyAppBar2(){
   return AppBar(
+    centerTitle: true,
     title: getMyText("Alterar a senha", 36),
     backgroundColor: Colors.deepPurpleAccent,
     actions: <Widget>[

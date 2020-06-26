@@ -4,6 +4,7 @@ import 'package:bate_ponto_frontend/view/drawer/item/Item.dart';
 
 AppBar getMyAppBar(){
   return AppBar(
+    centerTitle: true,
     title: getMyText("Orbit", 36),
     backgroundColor: Colors.deepPurpleAccent,
   );
