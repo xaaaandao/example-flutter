@@ -84,11 +84,11 @@ class _CidadeState extends State<Cidade> {
 
   TableCell defineCelulaTabela(text){
     return new TableCell(
-                child: Center(
-                  child: getMyText(text, 20)
-                ),
-                verticalAlignment: TableCellVerticalAlignment.middle,
-              );
+      child: Center(
+        child: getMyText(text, 20)
+      ),
+      verticalAlignment: TableCellVerticalAlignment.middle,
+    );
   }
 
   FloatingActionButton getMyFloatingActionButton(context){

@@ -16,6 +16,7 @@ ListTile getItemWithoutSubmenu(context, String text){
 ListTile getNavigateHome(context, String text){
   return new ListTile(
     title: getMyText(text, 28),
+    trailing: Icon(Icons.home),
     onTap: () {
       /*
       Navigator.push(
@@ -32,6 +33,7 @@ ListTile getNavigateHome(context, String text){
 ListTile getNavigateSair(context, String text){
   return new ListTile(
     title: getMyText(text, 28),
+    trailing: Icon(Icons.exit_to_app),
     onTap: () {
       Navigator.push(
         context,
